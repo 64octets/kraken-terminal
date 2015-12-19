@@ -3,7 +3,7 @@
 A terminal utility written in Python that interacts with Bitcoin Exchange Kraken.com API.
 
 ## Screenshot
-![alt tag](http://i.imgur.com/cLdvCg9.png)
+![alt tag](http://i.imgur.com/qwjT9jo.png)
 
 ## Description
 
