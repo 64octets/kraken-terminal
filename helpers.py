@@ -73,9 +73,9 @@ def getTicker(pair='XBTEUR'):
     last = _currencyStr(q['result'][_magicPair(pair)]['c'][0])
     low = _currencyStr(q['result'][_magicPair(pair)]['l'][0])
     txt = "%(pair)s\n\n" % locals()
-    txt += "%(high)s\n" % locals()
-    txt += "%(last)s\n" % locals()
-    txt += "%(low)s" % locals()
+    txt += "High: %(high)s\n" % locals()
+    txt += "Last: %(last)s\n" % locals()
+    txt += "Low : %(low)s\n" % locals()
     return { 'txt': txt }
 
 # Returns open orders
