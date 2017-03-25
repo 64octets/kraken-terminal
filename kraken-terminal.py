@@ -23,27 +23,27 @@ def dispatch(self, option):
 
         # Option
         if option not in optionMap:
-            print "\nInvalid option!\n"
+            print("\nInvalid option!\n")
             return True
 
         if option == "q":
-            print "\nGoodbye!"
+            print("\nGoodbye!")
             return False
 
         method_name = optionMap[str(option)]
         method = getattr(self, method_name)
 
     except AttributeError:
-        print "Unexpected Error: Incorrect optionMap"
+        print("Unexpected Error: Incorrect optionMap")
         return False
     else:
-        print "\n" + method()['txt'] + "\n"
+        print("\n" + method()['txt'] + "\n")
         return True
 
 # Start
 os.system('clear')
 
-print """
+print("""
     Welcome to your Kraken Utility!
     Choose one of the following options:
 
@@ -53,14 +53,14 @@ print """
     o) Get Orders
     b) Open Chart in Browser
     q) Exit
-"""
+""")
 
 running = True
 
 while running:
 
     # User prompt for option
-    running = dispatch(h, raw_input(">"))
+    running = dispatch(h, input(">"))
 
 # Give me a bit of space at the end!
-print ""
+print("")

@@ -9,11 +9,6 @@ import pprint
 import operator
 import webbrowser
 
-# Set default encoding to allow currency symbols
-import sys
-reload(sys)
-sys.setdefaultencoding("utf-8")
-
 DEBUG = False
 
 url = "https://cryptowat.ch/kraken/btceur"
@@ -50,14 +45,14 @@ def openChart():
 
 # Get Trade Balance (sum of all btc and fiat assets)
 def getTradeBalance(asset='ZEUR'):
-    if DEBUG: print "\n" + "Querying TradeBalance..."
+    if DEBUG: print("\n" + "Querying TradeBalance...")
     q = k.query_private('TradeBalance', {'asset': asset})
     balance = _currencyStr(q['result']['tb'])
     txt = "Trade Balance = %(balance)s" % locals()
     return { 'txt': txt }
 
 def getAccountBalance():
-    if DEBUG: print "\n" + "Querying Account Balance..."
+    if DEBUG: print("\n" + "Querying Account Balance...")
     q = k.query_private('Balance')
     btc = q['result']['XXBT']
     eur = _currencyStr(q['result']['ZEUR'])
@@ -67,7 +62,7 @@ def getAccountBalance():
 
 # Returns last trade closing value
 def getTicker(pair='XBTEUR'):
-    if DEBUG: print "\n" + "Querying Ticker..."
+    if DEBUG: print("\n" + "Querying Ticker...")
     q = k.query_public('Ticker', {'pair': pair})
     high = _currencyStr(q['result'][_magicPair(pair)]['h'][0])
     last = _currencyStr(q['result'][_magicPair(pair)]['c'][0])
@@ -80,7 +75,7 @@ def getTicker(pair='XBTEUR'):
 
 # Returns open orders
 def getOrders(includeTrades=False):
-    if DEBUG: print "\n" + "Querying Orders..."
+    if DEBUG: print("\n" + "Querying Orders...")
 
     q = k.query_private('OpenOrders', {'trades': includeTrades})
     orders = { 'buy': [], 'sell': [], 'buyNet': 0, 'sellNet': 0 }
