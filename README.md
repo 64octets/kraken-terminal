@@ -13,7 +13,7 @@ Provides a quicker way for kraken.com users to interact with their account. All 
 
 ### Prerequisites
 
-* [veox/python2-krakenex](https://github.com/veox/python2-krakenex)
+* [veox/python3-krakenex](https://github.com/veox/python3-krakenex)
   * Clone it and run `python ./setup.py install`.
 
 ### API Key
@@ -40,3 +40,7 @@ Suggestions for improvement:
 - [ ] Ledger
 - [ ] Error Handling
   * Handle network, API Key and query.
+
+## Changelog
+
+2017/03/25 Updated to work with Python 3
